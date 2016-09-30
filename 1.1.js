@@ -1,9 +1,8 @@
 webpackJsonp([1],{
 
 /***/ 22:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;__webpack_require__(1)
 	/**
 	 * @author littenli
 	 * @date 2014-03-10 version 0.2
@@ -15,13 +14,7 @@ webpackJsonp([1],{
 	 *          options.errCallBack {Function} 可为空.提供img加载失败回调，供业务额外去处理加载失败逻辑
 	 *          options.container {Dom} 提供容器节点内可视区域的加载能力，默认为window
 	 */
-	(function (root, factory) {
-	    if (true) {
-	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	    } else {
-	        factory(root['jQuery']);
-	    }
-	}(this, function ($) {
+
 
 	    $.fn.lazyload = function(options) {
 	        return this.each(function() {
@@ -170,7 +163,6 @@ webpackJsonp([1],{
 	        });
 	    };
 
-	}));
 
 
 /***/ }
