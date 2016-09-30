@@ -104,7 +104,6 @@
 	var fixPage = __webpack_require__(8)
 	var mobile = __webpack_require__(9)
 	var viewer = __webpack_require__(10)
-
 	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(22)]; (function(){
 				//avatar
 
@@ -135,6 +134,10 @@
 			}
 		};
 
+	})
+
+	$(function() {
+		scrollProgress.set();
 	})
 
 /***/ },
