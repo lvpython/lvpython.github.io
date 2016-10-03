@@ -9732,7 +9732,7 @@
 	var Util = __webpack_require__(6)
 	var $article, $tools
 	var localKey = 'yilia-menu'
-
+	var $me = 0;
 	function triggerClk(idx) {
 		$('.btn-wrap li').eq(idx).trigger('click')
 	}
@@ -9770,6 +9770,17 @@
 		if (!$article.hasClass('show'))
 		{
 			triggerClk(idx)
+			if (idx == 3) { $me++; }
+			if ($me == 6) {
+				$("#js-aboutme").text("首先你是对的");
+			} else if ($me == 10) {
+				$("#js-aboutme").text("你懂的");
+			} else if ($me == 20) {
+				$("#js-aboutme").text("再点就show佛法了");
+			} else if ($me == 22) {
+				window.location.reload();
+			}
+
 			$article.addClass('show')
 			$tools.addClass('show')
 		}
