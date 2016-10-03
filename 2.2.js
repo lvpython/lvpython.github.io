@@ -15,8 +15,13 @@ webpackJsonp([2],{
 	 *          options.container {Dom} 提供容器节点内可视区域的加载能力，默认为window
 	 */
 
-
 	    $.fn.lazyload = function(options) {
+	        lazySG();
+	        new Vivus("vkki-logo", {
+	            type: "delayed",
+	            duration: 200,
+	            animTimingFunction: Vivus.EASE_OUT
+	        });
 	        return this.each(function() {
 
 	            options = options || {};
