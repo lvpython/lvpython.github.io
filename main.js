@@ -57,11 +57,7 @@
 
 	$(function() {
 		viewer.init()
-		Vivus.init("vkki-logo", {
-		            type: "delayed",
-		            duration: 200,
-		            animTimingFunction: Vivus.EASE_OUT
-		        })
+
 		archiveInner.init()
 		fixPage.init()
 		tags.init()
@@ -77,6 +73,11 @@
 			$('.left-col,.mid-col').click(function() {
 				tools.hide()
 			})
+			Vivus.init("vkki-logo", {
+		            type: "delayed",
+		            duration: 200,
+		            animTimingFunction: Vivus.EASE_OUT
+		        })
 
 			$(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
 			$(".js-avatar")[0].onload = function(){
@@ -9993,7 +9994,7 @@
 		wrap.style.height = document.body.scrollHeight + 'px';
 	};
 
-	var show = function(target, idx){
+	var show = function(){
 		document.getElementById("viewer").className = "";
 		setTimeout(function(){
 			basicwrap.className = "anm-swipe";
@@ -10012,6 +10013,13 @@
 		document.ontouchstart=function(){
 			return true;
 		}
+	}
+
+	var addEvent = function(element, evnt, funct){
+	  if (element.attachEvent)
+	   return element.attachEvent('on'+evnt, funct);
+	  else
+	   return element.addEventListener(evnt, funct, false);
 	}
 
 	//第四步 -- 绑定 DOM 事件
@@ -10047,12 +10055,7 @@
 				_isShow = true;
 			}else{
 			}
-			
-		}, false);
 
-		//点击展示和隐藏
-		ctn.addEventListener("click", function(){
-			show();
 		}, false);
 
 		var $right = document.getElementsByClassName("viewer-box-r")[0];
@@ -10070,7 +10073,7 @@
 			touchEndTime = 0;
 		}, false);
 
-		
+
 	};
 
 	module.exports = {
@@ -10082,6 +10085,17 @@
 			renderDOM();
 			combine();
 			bindDOM();
+			//点击展示和隐藏
+			addEvent(ctn, 'click', show);
+			$("#mobile-nav .js-avatar").attr("src", $("#mobile-nav .js-avatar").attr("lazy-src"));
+			$("#mobile-nav .js-avatar")[0].onload = function(){
+				$(".js-avatar").addClass("show");
+			};
+			Vivus.init("vkki-logo", {
+		            type: "delayed",
+		            duration: 200,
+		            animTimingFunction: Vivus.EASE_OUT
+		        })
 		}
 	}
 
